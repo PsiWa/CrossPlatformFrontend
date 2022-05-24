@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BuildingService } from './building.service';
+import { IBuilding } from './building';
 
 @Component({
   selector: 'app-building',
@@ -8,11 +9,11 @@ import { BuildingService } from './building.service';
 })
 export class BuildingComponent implements OnInit {
 
-  buildings: any;
-  constructor(private service: BuildingService) { }
+  public buildings: IBuilding[]=[]
+  constructor(private _buildingservice: BuildingService) { }
 
   ngOnInit(): void {
-    this.service.getBuildings().subscribe(data => this.buildings = data);
+    this._buildingservice.getBuildings().subscribe(data => this.buildings = data);
   }
 
 }

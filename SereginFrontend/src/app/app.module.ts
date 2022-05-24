@@ -1,24 +1,29 @@
+import { AuthService } from './auth/auth.service';
+import { UsersService } from './users/users.service';
 import { BuildingService } from './building/building.service';
-import { BuildingComponent } from './building/building.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BuildingComponent
+    routingComponents
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
-    BuildingService
+    BuildingService,
+    UsersService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

@@ -25,12 +25,17 @@
       </svg>
     Типовой дизайн
   </h1>
+  <nav>
+    <ul>
+      <a>Home </a>
+      <a routerLink="building" routerLinkActive="active">Buildings </a>
+      <a routerLink="users" routerLinkActive="active">Users </a>
+      <a routerLink="auth" routerLinkActive="active">Auth </a>
+    </ul>
+  </nav>
 </div>
 
-  <h1>Angular</h1>
-  <app-building>Building</app-building>
-
-
+  <router-outlet></router-outlet>
 
 <!-- Site footer -->
 <footer class="site-footer">

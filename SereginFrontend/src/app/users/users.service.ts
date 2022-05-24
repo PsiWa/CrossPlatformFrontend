@@ -1,16 +1,15 @@
-
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { IBuilding } from "./building";
+import { IUser } from "./users";
 
 @Injectable()
-export class BuildingService{
+export class UsersService{
 
     constructor(private http: HttpClient){}
 
-    getBuildings(): Observable<IBuilding[]>
+    getUsers(): Observable<IUser[]>
     {
-        return this.http.get<IBuilding[]>("https://localhost:5001/api/Buildings");
+        return this.http.get<IUser[]>("https://localhost:5001/api/Users");
     }
 }
