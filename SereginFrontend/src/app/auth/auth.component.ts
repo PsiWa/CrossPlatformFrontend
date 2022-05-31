@@ -10,15 +10,23 @@ export class AuthComponent implements OnInit {
 
   email = ""
   password = ""
-  test: string | null = ""
+  result:string | null = "error"
+  isLogIn = false
   constructor(private _authservice: AuthService) { }
 
   Login() {
-    this.test = this._authservice.login(this.email, this.password)
-    console.log(this.test);
+    this.result = this._authservice.login(this.email, this.password);
+    console.log(localStorage.getItem('auth_token'));
+    this.CheckResult();
   }
-
+  CheckResult(){
+    if (this.result != "error")
+      this.isLogIn = true;
+    else
+      this.isLogIn = false;
+  }
   ngOnInit(): void {
+    this.CheckResult();
   }
 
 }
